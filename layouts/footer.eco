@@ -1,0 +1,46 @@
+<div class="footer">
+
+    <div>
+      <p>
+        <strong>About</strong>
+      </p>
+
+      <p>
+        I'm a free culture and free software enthusiast who graduated from NYU
+        in 2010 and moved to Berlin. I enjoy thinking and writing about
+        technology, listening to all kinds of music, and playing ukulele.
+        <a href="/about">
+          more »
+        </a>
+    </p>
+    </div>
+
+    <div>
+      <p>
+        <strong>Recently</strong>
+      </p>
+
+      <ul class="nav">
+        <li>
+          Link to the 5 months that had articles in them
+        </li>
+      </ul>
+    </div>
+
+  <div class="last">
+      <p>
+        <strong>Et Cetera</strong>
+      </p>
+
+    <form method="get" id="sform" action="post">
+      <p>
+        <input type="text" id="q" value="" name="s" size="15" style="width:80px;background-color:#e5e5e5" />
+        <input type="submit" value="Search" style="font-size:10px;vertical-align:top" />
+      </p>
+    </form>
+
+  </div>
+
+</div>
+
+<br clear="all" />

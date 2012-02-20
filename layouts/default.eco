@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Parker Higgins">
+    <meta name="generator" content="grapevine" />
+    <meta name="copyright" content="Parker Higgins">
+    <meta http-equiv="content-language" content="en-us">
+    <title>
+      parker higgins dot net<%- " - #{@page.title}" if @page.title %>
+    </title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" media="screen, projection" href="/css/default.css" />
+  </head>
+  <body>
+    <div class="container">
+      <%- @include 'header' %>
+
+      <%- @yield %>
+
+      <br clear="all" />
+
+      <%- @include 'footer' %>
+
+      <div class="copyright">
+        <% if @page.url isnt 'index.html' : %>
+          <span class="previous">
+            &larr; <a href="/">Back to Home</a>
+          </span>
+        <% end %>
+        <p>
+          &copy; Parker Higgins. Powered by grapevine using the
+          <a href="http://powazek.com/depo-skinny">DePo Skinny Theme</a>.
+        </p>
+      </div>
+
+    </div>
+  </body>
+</html>

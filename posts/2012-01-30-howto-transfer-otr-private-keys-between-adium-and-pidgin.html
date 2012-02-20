@@ -1,0 +1,31 @@
+---
+layout: post
+title: ! 'HOWTO: Transfer OTR private keys between Adium and Pidgin'
+tags:
+- adium
+- encryption
+- howto
+- otr
+- pidgin
+- privacy
+- ubuntu
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+<p>I recently re-installed Ubuntu on my home computer, and wanted to move my office Mac's Adium OTR key and collected fingerprints over to the new install. I had some trouble, but got it eventually, so I wanted to document the process.</p>
+<p>The first step is to make sure you've got Pidgin and Pidgin-OTR installed on one computer, and Adium on another.</p>
+<p>Adium stores the OTR private key and the fingerprints in</p>
+<pre><code>~/Library/Application Support/Adium 2.0/Users/Default/otr.private_key
+~/Library/Application Support/Adium 2.0/Users/Default/otr.fingerprints
+</code></pre><br />
+<p>Pidgin, on GNU/Linux, stores the OTR private key and fingerprints in</p>
+<pre><code>~/.purple/otr.private_key
+~/.purple/otr.fingerprints
+</code></pre><br />
+<p>It's worth noting that neither application stores these keys encrypted. The threat model assumes that if an attacker has access to your <code>Adium 2.0</code> or <code>.purple</code> folder, you're already compromised. But that means you have to be extra careful about transferring these files from one computer to another: obviously, sending your key in a cleartext e-mail is not a good idea.</p>
+<p>Anyway, harmonizing is just a matter of copying both files from one location to another, and then modifying the key slightly to match the format that each program stores it in. I was disappointed at how poorly documented these formats are, but fortunately the always impressive <a href="https://guardianproject.info/">Guardian Project</a> has gone through and documented each program's file location and format in order to build <a href="https://github.com/guardianproject/otrfileconverter">a tool to convert files between different IM client formats</a>. The tool's not done, and so far only converts to their <a href="https://guardianproject.info/apps/gibber/">Gibberbot mobile IM client</a>, but the <a href="https://github.com/guardianproject/otrfileconverter/blob/master/README.txt">README</a> contains all the information you need.</p>
+<p>In the case of Adium to Pidgin key transfer, which both use the standard <code>libotr</code format, only the first few lines have to be changed. The <code>name</code> field, which is an integer in the Adium config file, needs to be changed to the actual account name. The <code>protocol</code> field needs to be changed from <code>libpurple-jabber-gtalk</code> (in the case of a GTalk account) to <code>prpl-jabber</code>.</p>
+<p>You may need to turn Pidgin's OTR plugin off and on again, but it should recognize your key, and all of your verified fingerprints should show up as well.</p>

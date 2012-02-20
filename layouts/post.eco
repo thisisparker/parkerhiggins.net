@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<div class="post">
+  <h3>
+    <a href="/<%- @page.url %>" title="Permalink to <%- @page.title %>">
+      <%- @page.title %>
+    </a>
+  </h3>
+
+  <p class="byline">
+    on <%- @dateFormat @page.date, "d mmmm yyyy" %>
+    <% if @page.tags? : %>
+      tagged
+      <% for tag, index in @page.tags : %>
+        <a href="/tag/<%- @slugify tag %>"><%- tag %></a><%- ',' if index isnt @page.tags.length - 1 %>
+      <% end %>
+    <% end %>
+  </p>
+
+  <%- @page.body %>
+
+  <br />
+
+</div>
+
+<br clear="all" />

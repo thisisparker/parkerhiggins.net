@@ -1,0 +1,25 @@
+---
+layout: post
+title: Paulstretch on Ubuntu 10.04
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _wp_old_slug: paulstretch-binary-for-ubuntu-10-04
+---
+There's been a lot of slowed-down action on the web in the past few days after <a href="http://soundcloud.com/shamantis/j-biebz-u-smile-800-slower">a particularly hilarious slowed-down version of Justin Bieber's "U Smile"</a> generated over half a million plays on SoundCloud yesterday. Shamantis, the artist behind the recording, pulled off the hitherto considered impossible feat of making Bieber sound like Sigur Rós. The program Shamantis used is called <a href="http://hypermammut.sourceforge.net/paulstretch/">Paul's Extreme Sound Stretch</a>--it's a powerful (if not particularly multi-faceted) program that is capable of real-time playback of songs stretched to one million times their original length without affecting the pitch, effectively making an audio texture out of any track, clip, or sound.
+
+Paulstretch, as the program is usually referred to, is written by a guy named Nasca Octavian Paul, and it's free and released under the GPL. Naturally <a href="http://sourceforge.net/projects/hypermammut/files/">the source code is available</a>, but Paul doesn't compile GNU/Linux binaries, and compiling it on my Ubuntu 10.04 system was not totally trivial.
+
+I was able to compile by installing all Fluid and all the libraries specified in the README, and by adding the line
+<code>#include &lt;string.h&gt; </code>after the line
+<code>#include &lt;string&gt; </code>
+to the MP3InputS.h file, as was <a href="http://sourceforge.net/projects/hypermammut/forums/forum/561037/topic/3246904">suggested in a help forum</a>.
+
+If you want to hear some of my efforts on it, I've uploaded a 800% slower version of the Sigur Rós song "Saeglopur" to SoundCloud.
+
+<br />
+
+<object height="18" width="100%"> <param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F4666871&amp;auto_play=false&amp;player_type=tiny&amp;font=Arial&amp;color=b60f0a"></param> <param name="allowscriptaccess" value="always"></param> <param name="wmode" value="transparent"></param><embed wmode="transparent" allowscriptaccess="always" height="18" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F4666871&amp;auto_play=false&amp;player_type=tiny&amp;font=Arial&amp;color=b60f0a" type="application/x-shockwave-flash" width="100%"></embed> </object>   
